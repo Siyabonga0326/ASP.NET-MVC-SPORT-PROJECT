@@ -1,12 +1,10 @@
-C# PROJECT DESIGNED TO HELP SCHOOL'S SPORT COORDINATORS TO ACCEPT REQUEST FROM STUDENT'S  
-TO JOIN SCHOOL TEAM IN AN EFFECTIVE WAY. STUDENT ALSO USE IT TO VIEW SPORT'S THAT THE SCHOOL IS OFFERING AND APPLY FOR THEIR CHOSEN SPORT
-AFTER MAKING AN APPLICATION THEY CAN TRACK IT, THEY CAN ALSO MANTAIN THEIR APPLICATION BY UTILIZING EDIT,DETAILS AND DELETE.
+This C# project is crafted to facilitate school sports coordinators in efficiently managing student requests to join the school team.
+Students can utilize the system to explore available sports offered by the school and apply for their preferred sport. After submitting an application, 
+students can track its progress and manage their applications using features such as edit, details, and delete.
 
+To run the project, simply clone it to your Visual Studio environment, navigate to **appsettings.json**, 
+and update the connection string to match your database. Then, **add the provided migrations** located in the Data >> Migration folder.
 
-HOW YOU CAN RUN IT ?
-CLONE IT TO YOUR VISUAL STUDIO
-Navigate to **appsettings.json** and change that connection string to yours
-**Add Migration** provided from Data>>Migration.
-
-Admin user name :**@admin**
-password: **@321**
+Admin credentials: 
+**Username: @admin 
+Password: @321**
