@@ -1,0 +1,81 @@
+﻿@model IEnumerable<SportSelect.Models.Student>
+
+@{
+    ViewData["Title"] = "Selected Team";
+}
+@* 
+<h1>Selected Team</h1> *@
+<h1>Selected List of Teams</h1>
+<html lang="en">
+<head>
+    <style>
+        /* Add your CSS styles here */
+        table {
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+            width: 33%; /* Set the width of each column to 33% */
+            color: orange;
+        }
+
+        th {
+            background-color: black; /* Changed the background color to orange */
+        }
+        td{
+            background-color:white;
+        }
+
+     /*    style="background-color: black; color: white; */
+        tr {
+            display: flex; /* Set table rows as flex containers */
+        }
+
+        /* Center-align the "Selected List of Teams" text */
+        h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+   
+
+    <!-- Loop through each sport -->
+    @foreach (var sport in new[] { "Soccer", "Basketball", "Volleyball", "Tennis", "Cricket" })
+    {
+        <!-- Filter students for the current sport with ApplicationStatus "Approved" -->
+        var selectedStudents = Model.Where(s => s.SportSelected == sport && s.ApplicationStatus == "Successful");
+
+        <!-- Display the team only if there are selected students for the current sport -->
+        @if (selectedStudents.Any())
+        {
+            <h3>@sport</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Student Number</th>
+                        <th>Name</th>
+                        <th>Surname</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Loop through selected students for the current sport and display their information -->
+                    @foreach (var student in selectedStudents)
+                    {
+                        <tr>
+                            <td>@student.UserID</td>
+                            <td>@student.Name</td>
+                            <td>@student.LastName</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+    }
+</body>
+</html>

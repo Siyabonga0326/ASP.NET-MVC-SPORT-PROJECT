@@ -1,0 +1,157 @@
+﻿@model SportSelect.Models.Student
+
+@{
+    ViewData["Title"] = "View Sport";
+}
+
+<h1 style=" color: #0066cc; text-align:left">View Sport</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-size: cover;
+            background-position: center;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            font-size: 36px;
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #0066cc;
+        }
+
+        p {
+            font-size: 16px;
+        }
+
+        .sports-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .sport-container {
+            margin: 20px;
+            text-align: center;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            background-color: #fff;
+            width: 300px;
+        }
+
+        .sport-img {
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .participate-button {
+            background-color: #ff6600;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+            .participate-button:hover {
+                background-color: #e65c00;
+            }
+    </style>
+</head>
+<body>
+
+    <div class="sports-container">
+        <div class="sport-container">
+            <div class="sport-info">
+                <h2>Rugby 🏉</h2>
+                <p>Rugby is a popular team sport played with an oval-shaped ball.</p>
+                <img src="~/rugby gif.gif" alt="Rugby" class="sport-img" width="200" height="200">
+            </div>
+            <a asp-action="Create" asp-controller="Students" class="participate-button">
+                Participate Now
+            </a>
+        </div>
+
+        <div class="sport-container">
+            <div class="sport-info">
+                <h2>Soccer ⚽</h2>
+                <p>Soccer, also known as football in many countries, is a globally beloved sport.</p>
+                <img src="~/gif soccer.gif" alt="Soccer" class="sport-img" width="200" height="200">
+            </div>
+            <a asp-action="Create" asp-controller="Students" class="participate-button">
+                Participate Now
+            </a>
+        </div>
+
+        <div class="sport-container">
+            <div class="sport-info">
+                <h2>Volleyball 🏐</h2>
+                <p>Volleyball is a dynamic team sport played with a ball over a net.</p>
+                <img src="~/volly gif.gif" alt="Volleyball" class="sport-img" width="200" height="200">
+            </div>
+            <a asp-action="Create" asp-controller="Students" class="participate-button">
+                Participate Now
+            </a>
+        </div>
+
+        <div class="sport-container">
+            <div class="sport-info">
+                <h2>Netball 🏀</h2>
+                <p>Netball is a ball sport played on a rectangular court by two teams of seven players. The primary objective is to shoot a ball through the defender's goal ring.</p>
+                <img src="~/netball gif.gif" alt="Netball" class="sport-img" width="200" height="200">
+            </div>
+            <a asp-action="Create" asp-controller="Students" class="participate-button">
+                Participate Now
+            </a>
+        </div>
+
+        <div class="sport-container">
+            <div class="sport-info">
+                <h2>Tennis 🎾</h2>
+                <p>Tennis is a racket sport that can be played individually against a single opponent (singles) or between two teams of two players each (doubles).</p>
+                <img src="~/tenis gif.gif" alt="Tennis" class="sport-img" width="200" height="200">
+            </div>
+            <a asp-action="Create" asp-controller="Students" class="participate-button">
+                Participate Now
+            </a>
+        </div>
+
+        <div class="sport-container">
+            <div class="sport-info">
+                <h2>Cricket 🏏</h2>
+                <p>Cricket is a bat-and-ball game played between two teams of eleven players on a field at the center of which is a 22-yard pitch with a wicket at each end.</p>
+                <img src="~/cricket gif.gif" alt="Cricket" class="sport-img" width="200" height="200">
+            </div>
+            <a asp-action="Create" asp-controller="Students" class="participate-button">
+                Participate Now
+            </a>
+        </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    @section Scripts {
+        @{
+            await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        }
+    }
+</body>
+</html>
+
+

@@ -1,0 +1,129 @@
+﻿@model SportSelect.Models.Student
+
+<h1>FAQs</h1>
+@* @{
+    ViewBag.Title = "FAQ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+} *@
+
+<h2>Frequently Asked Questions</h2>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+
+    <style>
+
+        .feature {
+            display: flex;
+            margin: 40px 0;
+            padding: 30px;
+            background-color: #FFF;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+            .feature:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            }
+
+        .feature-text:hover .colored-square {
+            transform: translateY(-50%) rotate(90deg);
+        }
+
+        .feature-text:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content p {
+            padding: 10px;
+            margin: 0;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: orangered; /* Dodger Blue */
+            min-width: 200px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            color: white;
+        }
+
+        h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+
+
+
+            <section class="feature">
+                <div class="feature-text">
+                    <h1>How can I join the school sports team?</h1>
+                    <div class="feature-text"></div>
+                    <div class="dropdown-content">
+                        <p>To join the school sports team, you need to follow these steps:</p>
+                        <ul>
+                            <li>
+                                Fill out the sports team registration form.<br />
+                                Participate in tryouts if required.<br />
+                                Attend team meetings and practices.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="feature">
+                <div class="feature-text">
+                    <h1>Are there any academic requirements to participate in sports?</h1>
+                    <div class="feature-text"></div>
+                    <div class="dropdown-content">
+                        <ul>
+                            <li>
+                                It's important to note that academic requirements for sports participation are in place to
+                                encourage student-athletes to prioritize their education and maintain a level of academic excellence.<br />
+                            </li>
+                            <li>
+                                The specific requirements can vary widely, so it's essential to check with the school or sports program you're
+                                interested in to understand their specific
+                                academic eligibility rules and any support services they offer to student-athletes.
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+
+
+            <section class="feature">
+                <div class="feature-text">
+                    <h1>Are there any fees associated with joining a sports team?</h1>
+                    <div class="feature-text"></div>
+                    <div class="dropdown-content">
+                        <ul>
+                            <li> No , the school takes care of all costs. We only need you and your skills.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+
+
+        </div>
+    </form>
+</body>
+</html>
+
+

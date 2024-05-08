@@ -1,0 +1,112 @@
+﻿@model IEnumerable<SportSelect.Models.Validate>
+
+@{
+    ViewData["Title"] = "Index";
+    var errorMessage = TempData["ErrorMessage"] as string;
+}
+
+<h1>My Application</h1>
+<head>
+    <style>
+        table {
+        }
+
+        th, td {
+            border: 1px solid black;
+            color: orange;
+        }
+
+        th {
+            background-color: black; /* Changed the background color to orange */
+        }
+
+        td {
+            background-color: white;
+        }
+
+    </style>
+</head>
+@if (!string.IsNullOrEmpty(errorMessage))
+{
+    <div class="alert alert-danger" role="alert">
+        @errorMessage
+    </div>
+}
+<h1>Validation History</h1>
+<p>After you're validation you can now make an application</p>
+
+<p>
+    <a asp-action="Create">Validate Now</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.UserID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Age)
+            </th> 
+            <th>
+                @Html.DisplayNameFor(model => model.Weight)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Strength)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Endurance)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Passion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Determination)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TeamWork)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValidationStatus)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Age)
+            </td>  
+            <td>
+                @Html.DisplayFor(modelItem => item.Weight)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Strength)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Endurance)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Passion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Determination)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TeamWork)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValidationStatus)
+            </td>
+           @*  <td>
+                <a asp-action="Edit" asp-route-id="@item.UserID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.UserID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.UserID">Delete</a>
+            </td> *@
+        </tr>
+}
+    </tbody>
+</table>

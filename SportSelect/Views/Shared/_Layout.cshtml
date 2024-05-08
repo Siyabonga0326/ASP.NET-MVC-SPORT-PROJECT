@@ -1,0 +1,194 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - SportSelect</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/SportSelect.styles.css" asp-append-version="true" />
+    <!-- Favicon -->
+    <link href="~/Car-Hire/img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Rubik&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="~/Car-Hire/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="~/Car-Hire/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="~/Car-Hire/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="~/Car-Hire/css/style.css" rel="stylesheet">
+    <style type="text/css">
+        .auto-style1 {
+            width: 752px;
+        }
+    </style>
+    <style>
+        /* Add custom styles for sidebar here */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 200px;
+            background-color: #f8f9fa; /* Change sidebar background color */
+            padding-top: 3.5rem; /* Adjust top padding for content clearance */
+            border-right: 1px solid #dee2e6; /* Add border for separation */
+        }
+
+        .sidebar-nav {
+            padding-left: 15px; /* Add left padding for better alignment */
+        }
+
+            .sidebar-nav .nav-link {
+                color: #495057; /* Change link text color */
+                font-family: 'Rubik', sans-serif; /* Apply Google Web Font */
+            }
+
+                .sidebar-nav .nav-link:hover {
+                    background-color: #e9ecef; /* Change hover background color */
+                }
+
+        /* Adjust main content to push it to the right */
+        .main-content {
+            margin-left: 220px; /* Adjust as needed */
+        }
+
+        body {
+            background-image: url('/new.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 100vh; /* Set the height of the background to fill the viewport */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="loadingOverlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: black; z-index: 9999; display: none;"></div>
+
+    <!-- GIF image -->
+    <div id="loadingImage" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 10000; display: none;">
+        <img src="~/loading.gif" alt="Loading..." style="width: 100px; height: 100px;">
+    </div>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">DUT sport Selection</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1 text-center">
+                        <h1>WELCOME TO DUT SPORT SELECTION</h1>
+                    </ul>
+                    <ul class="navbar-nav flex-grow-1">
+                    </ul>
+
+
+                    <partial name="_LoginPartial" />
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Sidebar navigation -->
+    <div class="sidebar">
+        <ul class="nav flex-column sidebar-nav">
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <li class="nav-item">
+                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+            </li> 
+            <li class="nav-item">
+                <a class="nav-link" asp-area="" asp-controller="Students" asp-action="Search">Search</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" asp-area="" asp-controller="Students" asp-action="ViewSport">View Sports</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" asp-area="" asp-controller="Students" asp-action="Create">Apply</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" asp-area="" asp-controller="Students" asp-action="Index">Track Application</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" asp-area="" asp-controller="Students" asp-action="Selected">Selected Teams</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" asp-area="" asp-controller="Students" asp-action="Announcement">Annoncement</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" asp-area="" asp-controller="Students" asp-action="About">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" asp-area="" asp-controller="Students" asp-action="FAQ">FAQs</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Main content -->
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+   @*  <footer class="border-top footer text-muted">
+        <div class="container" id="current-time">
+            &#169; @DateTime.UtcNow.ToString("dd MMMM yyyy hh:mm tt")
+        </div>
+    </footer> *@
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <script>
+        // Function to update the current time every second
+        function updateTime() {
+            var currentTimeElement = document.getElementById('current-time');
+            var now = new Date();
+            var formattedTime = now.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true });
+            currentTimeElement.innerHTML = "&#169; " + now.toLocaleDateString('en-US') + " " + formattedTime;
+        }
+
+        // Update the time immediately and then every second
+        updateTime();
+        setInterval(updateTime, 1000);
+    </script>
+    <script>
+        // Show the loading overlay and image when the page starts loading
+        window.addEventListener('load', function () {
+            document.getElementById('loadingOverlay').style.display = 'block';
+            document.getElementById('loadingImage').style.display = 'block';
+        });
+
+        // Hide the loading overlay and image after 3 seconds
+        setTimeout(function () {
+            document.getElementById('loadingOverlay').style.display = 'none';
+            document.getElementById('loadingImage').style.display = 'none';
+        }, 800); // 3 seconds
+    </script>
+    @await RenderSectionAsync("Scripts", required: false)
+
+
+</body>
+</html>

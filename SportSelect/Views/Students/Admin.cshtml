@@ -1,0 +1,125 @@
+﻿@model IEnumerable<SportSelect.Models.Student>
+
+@{
+    ViewData["Title"] = "Admin";
+}
+<head>
+    <style>
+        table {
+           
+        }
+
+        th, td {
+            border: 1px solid black;
+            
+            color: orange;
+        }
+
+        th {
+            background-color: black; /* Changed the background color to orange */
+        }
+
+        td {
+            background-color: white;
+        }
+
+       
+
+       
+    </style>
+</head>
+<h1>Admin Dashboard</h1>
+<hr />
+<br />
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"> </script>
+<script>
+  
+
+    function approveApplication(userId, sport) {
+        // Make an AJAX call to the server to approve the application
+        $.ajax({
+            url: '/Students/Approve',
+            method: 'POST',
+            data: { userId: userId, sport: sport },
+            success: function (response) {
+                alert(response);
+                location.reload(); // Reload the page to reflect changes
+            },
+            error: function (xhr, status, error) {
+                alert(xhr.responseText);
+            }
+        });
+    }
+
+    function rejectApplication(userId, sport) {
+        // Make an AJAX call to the server to reject the application
+        $.ajax({
+            url: '/Students/Reject',
+            method: 'POST',
+            data: { userId: userId, sport: sport },
+            success: function (response) {
+                alert(response);
+                location.reload(); // Reload the page to reflect changes
+            },
+            error: function (xhr, status, error) {
+                alert(xhr.responseText);
+            }
+        });
+    }
+
+    function deleteApplication(userId, sport) {
+        // Make an AJAX call to the server to delete the application
+        $.ajax({
+            url: '/Students/DeleteApplication',
+            method: 'POST',
+            data: { userId: userId, sport: sport },
+            success: function (response) {
+                alert(response);
+                location.reload(); // Reload the page to reflect changes
+            },
+            error: function (xhr, status, error) {
+                alert(xhr.responseText);
+            }
+        });
+    }
+</script>
+@foreach (var sport in new List<string> { "Soccer", "Netball", "Rugby", "Tennis", "Cricket", "Volleyball" })
+{
+    <h2>@sport Applications</h2>
+    <table class="table" style="background-color: black;">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Last Name</th>
+                <th>UserID</th>
+                <th>PhoneNumber</th>
+                <th>Age</th>
+                <th>Application Status</th>
+                <th>Sport</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="applicationsTableBody" style="background-color:white;">
+            <!-- Add id to target this tbody -->
+            @foreach (var application in Model.Where(s => s.SportSelected == sport))
+            {
+                <tr>
+                    <td>@application.Name</td>
+                    <td>@application.LastName</td>
+                    <td>@application.UserID</td>
+                    <td>@application.PhoneNumber</td>
+                    <td>@application.Age</td>
+                    <td>@application.ApplicationStatus</td>
+                    <td>@application.SportSelected</td>
+                    <td>
+                        <button class="btn btn-primary" onclick="approveApplication('@application.UserID', '@application.SportSelected')">Approve</button>
+                        <button class="btn btn-danger" onclick="rejectApplication('@application.UserID', '@application.SportSelected')">Reject</button>
+                        <button class="btn btn-warning" onclick="deleteApplication('@application.UserID', '@application.SportSelected')">Delete</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <br />
+    <br />
+}

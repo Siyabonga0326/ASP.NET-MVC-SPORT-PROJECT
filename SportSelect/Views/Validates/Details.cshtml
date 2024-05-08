@@ -1,0 +1,60 @@
+﻿@model SportSelect.Models.Validate
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Validate</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Weight)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Weight)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Strength)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Strength)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Endurance)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Endurance)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Passion)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Passion)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Determination)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Determination)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TeamWork)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TeamWork)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ValidationStatus)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ValidationStatus)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.UserID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

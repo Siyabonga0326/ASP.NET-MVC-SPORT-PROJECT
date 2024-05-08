@@ -1,0 +1,186 @@
+﻿@model SportSelect.Models.Student
+
+@{
+    ViewData["Title"] = "About Us";
+}
+
+<h1 style="text-align:left">About Us</h1>
+<head>
+   
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-size: cover; /* Cover the entire background */
+            color: #333;
+        }
+
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .feature {
+            display: flex;
+            margin: 40px 0;
+            padding: 30px;
+            background-color: #FFF;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+            .feature:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            }
+
+        .feature-content {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .feature-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-right: 20px; /* Adjust spacing between image and text */
+        }
+
+        .feature-text {
+            flex: 2;
+        }
+
+        .feature img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        /* CSS for video container */
+        .video-container {
+            max-width: 100%;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+            .video-container video {
+                width: 100%;
+                height: auto;
+                border-radius: 10px;
+            }
+
+        .column {
+            float: left;
+            width: 33.3%;
+            margin-bottom: 16px;
+            padding: 0 8px;
+        }
+
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .container {
+            padding: 0 16px;
+        }
+
+            .container::after, .row::after {
+                content: "";
+                clear: both;
+                display: table;
+            }
+
+        .title {
+            color: grey;
+        }
+
+        .button {
+            border: none;
+            outline: 0;
+            display: inline-block;
+            padding: 8px;
+            color: white;
+            background-color: #000;
+            text-align: center;
+            cursor: pointer;
+            width: 100%;
+        }
+
+            .button:hover {
+                background-color: #555;
+            }
+
+        .slideshow-container {
+            max-width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team-member {
+            display: none;
+            text-align: center;
+        }
+
+            .team-member img {
+                max-width: 100%;
+                height: auto;
+                border-radius: 10px;
+            }
+
+        .button-container {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <section class="feature">
+            <div class="feature-content">
+                <div class="feature-image">
+                    <img src="~/dut vision.jpg" alt="About Us" style="border-radius: 100px; width: 100%; max-height: 300px;" />
+                </div>
+                <div class="feature-text">
+                    <h2>Our Vision</h2>
+                    <p>Empowering DUT students through a streamlined sports selection process that promotes inclusivity and excellence.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="feature">
+            <div class="feature-text">
+                <h2>Why Choose Us</h2>
+                <p>We offer a user-friendly platform that enhances transparency, fairness, and efficiency in the selection of sports teams. Join us to experience the future of sports selection!</p>
+            </div>
+            <div class="feature-image">
+                <img src="~/why.jpg" alt="Why Choose Us" style="width: 100%; max-height: 300px;" />
+            </div>
+        </section>
+
+        <section class="feature">
+            <div class="feature-content">
+                <div class="feature-image">
+                    <img src="~/dut-steve-biko-campus-e1687861287959 (1).jpg" alt="About Us" style="border-radius: 30px; width: 100%; max-height: 300px;" />
+                </div>
+            </div>
+            <!-- End Video Container -->
+
+            <div class="feature-text">
+                <h2>Our Mission</h2>
+                <p>To revolutionize the way DUT students participate in sports by providing a modern, secure, and accessible selection system that caters to their preferences and talents.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Your existing HTML content -->
+    <!-- ... -->
+
+</body>
+</html>
+

@@ -1,0 +1,104 @@
+﻿@model IEnumerable<SportSelect.Models.Student>
+
+@{
+    ViewData["Title"] = "Search";
+    var errorMessage = TempData["ErrorMessage"] as string;
+}
+
+<h1>Find My Application</h1>
+
+@if (!string.IsNullOrEmpty(errorMessage))
+{
+    <div class="alert alert-danger" role="alert">
+        @errorMessage
+    </div>
+}
+
+
+<head>
+    <style>
+        body {
+            background-size: cover; /* Adjust the background size */
+            background-repeat: no-repeat; /* Prevent image from repeating */
+            background-position: center; /* Center the background image */
+            height: 100%; /* Ensure the background covers the entire viewport height */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+        }
+
+        .transparent-container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            margin: auto;
+            margin-top: 100px; /* Adjusted margin-top */
+            text-align: center;
+            position: relative; /* Required for absolute positioning of emojis */
+        }
+
+        .form-group {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+            .form-group input[type="text"] {
+                width: calc(100% - 60px); /* Adjusted width */
+                height: 30px;
+                margin-bottom: 10px;
+                margin-top: 10px; /* Adjusted margin-top */
+            }
+
+        .btn-group {
+            display: flex;
+            flex-direction: row; /* Ensure buttons are in a row */
+            justify-content: space-between; /* Space between buttons */
+            width: 100%; /* Adjusted width */
+        }
+
+        .btn-track,
+        .btn-apply {
+            width: 48%; /* Adjusted width for individual buttons */
+            height: 40px;
+            font-size: 16px;
+        }
+
+        .btn-track {
+            background-color: orangered;
+            color: white;
+        }
+
+        .btn-apply {
+            background-color: orangered;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container transparent-container">
+        <h2>Find My Application</h2>
+        <form action="https://localhost:44375/Students/Details/1017" method="GET">
+            <div class="form-group">
+                <label for="sport">Sport:</label>
+                <select id="sport" name="sport" required>
+                    <option value="">Select Sport</option>
+                    <option value="football">Football</option>
+                    <option value="basketball">Basketball</option>
+                    <option value="tennis">Tennis</option>
+                    <option value="volleyball">Volleyball</option>
+                    <option value="netball">Netball</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-track">Search</button>
+        </form>
+
+
+        <!-- Bouncing Emojis -->
+        <div class="bouncing-emoji">&#x26BD;</div> <!-- Soccer ball emoji -->
+        <div class="bouncing-emoji">&#x1F3C0;</div> <!-- Basketball emoji -->
+    </div>
+</body>
